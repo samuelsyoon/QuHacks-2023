@@ -1,7 +1,7 @@
 import random
 
 
-class Enviroment:
+class Environment:
     def __init__(
         self,
         rainfall,
