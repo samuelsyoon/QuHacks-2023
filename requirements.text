@@ -1,0 +1,2 @@
+py -m pip install tkinter -r requirements.txt
+py -m pip install customtkinter -r rquirements.txt
