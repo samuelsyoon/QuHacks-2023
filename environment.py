@@ -12,26 +12,39 @@ class Enviroment:
         disease,
         pests,
     ):
-        # Amount of rainfall in the past 2 days in cm
+        # Days since last rainfall
         self.rainfall = rainfall
-        # Amount of sunlight in the past 2 days measured in hrs
+        # Days since last sunlight
         self.sunlight = sunlight
-        # Average temperature of the past 24 hours
+        # Temperature of the past day
         self.temperature = temperature
-        # Average nitrogen level over last two days measured in mg/L
+        # Nitrogen level of the past day in mg/L
         self.nitrogen_level = nitrogen_level
-        # Boolean is Fertilizer present
+        # Days since last fertilized
         self.fertilizer = fertilizer
-        # Boolean is Disease present
+        # Days since last diseased
         self.disease = disease
-        # int (0: no pests; 1: pests for one more day)
+        #  Days since last pests
         self.pests = pests
+        
+
+        
+        # def fertilizer() -> int:
+        # if userinputfertilizer == 1
+        #     counterfertilizer ==5
 
 
-    def rand_weather() -> str: 
+
+    def rand_weather(self) -> str: 
         weather_events = ["rain", "sunlight"]
         index = random.randint(0, len(weather_events) - 1)
         weather_event = weather_events[index]
+        if weather_event == 'rain':
+            self.rainfall = 0
+            self.sunlight += 1
+        elif weather_event == 'sunlight':
+            self.sunlight = 0 
+            self.rainfall += 1
         return weather_event
     
 
